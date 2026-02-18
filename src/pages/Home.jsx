@@ -1,13 +1,21 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomeMap from '../components/HomeMap';
+import {useState, useEffect} from 'react';
+import '../components/HomeMap.css';
 
 function Home(){
     return (
-        <>
- <h3>Map</h3>
-    <div id="map"></div>
+      <div className='home-component'>
+          <HomeMap/>
+      </div>
 
+    );
+  }
 
-     <form id="locationForm">
+export default Home
+/*
+
+<form id="locationForm">
           <fieldset >
             <legend>Login</legend>
             <div className="mb-3">
@@ -47,15 +55,12 @@ function Home(){
         </form>
 
 
+
             <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbHpVIghN8MOdVePby7tndqsKpZXZ6FIs&loading=async&callback=initMap">
 
             </script>
 
             <script src="./utils/map.js"></script>
-        </>
 
-    );
-  }
-
-export default Home
+*/
