@@ -1,0 +1,35 @@
+
+.home-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 92vh;
+    background: #fff;
+}
+.map-container{
+   outline:solid red;
+}
+
+.figure{
+    width: 250px;
+    background-color: rgb(246, 246, 246);
+}
+
+.figure p {
+    font-size: 8px;
+}
+figcaption {
+}
+
+.image-container{
+    width: 250px;
+}
+
+.upload-form-container{
+    background-color: rgb(246, 246, 246);
+}
+.txt-file-input{
+    height: 100%;
+    width: 100%;
+}
