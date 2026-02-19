@@ -11,7 +11,8 @@ function Dashboard(){
     //delete image
     const handleRemovePhoto = async (id) => {
         await fetch(`http://localhost:5555/photos/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            credentials: "include",
         });
         setPhotos(prev => prev.filter(photo => photo.id !== id));
     };
@@ -23,7 +24,9 @@ function Dashboard(){
     const [userID, setUserID] = useState(1);//this will be for logged user
 
     useEffect(() => {
-        fetch("http://localhost:5555/photos")
+        fetch("http://localhost:5555/photos", {
+            credentials: "include",
+        })
         .then((response) => {
             return response.json();
         })
@@ -45,6 +48,7 @@ function Dashboard(){
         try {
         const response = await fetch("http://localhost:5555/photos", {
             method: "POST",
+            credentials: "include",
             body: formData, 
         });
 

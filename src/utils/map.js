@@ -1,4 +1,4 @@
-var lng = 0;
+/*var lng = 0;
 var lat = 0;
 let map;
  
@@ -52,10 +52,11 @@ function showMap(lat, lng) {
 
 
 
-}
+}*/
 
 //*********************************************************************************************** */
 
+/*
 //draw marker
 let placeMarker = function (location) {
     //console.log();
@@ -184,3 +185,4 @@ let btnDisplayLocations = document.querySelector("#btnDisplayLocations");
 btnDisplayLocations.addEventListener("click", () => {
     displayLocations()
 })
+*/

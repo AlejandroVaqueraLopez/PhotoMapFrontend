@@ -8,18 +8,24 @@
     background: #fff;
 }
 .map-container{
-   outline:solid red;
+
 }
 
 .figure{
     width: 250px;
     background-color: rgb(246, 246, 246);
 }
+.info-window{
+    width: 350px;
+}
 
 .figure p {
     font-size: 8px;
 }
 figcaption {
+}
+.carousel{
+
 }
 
 .image-container{
@@ -32,4 +38,7 @@ figcaption {
 .txt-file-input{
     height: 100%;
     width: 100%;
+}
+.profile-row{
+    min-height:80vh;
 }

@@ -24,17 +24,3 @@ function DashboardPhoto({photo, onDelete}){
   }
 
 export default DashboardPhoto
-/**
- * 
- * 
-        <div className="bg-white border border-dark image-container">
-            <img src={`${BASE_URL}/uploads/${photo.imagePath}`} class="card-img-top" alt="..."/>
-            <div className="card-body">
-                <h5 className="card-title">{photo.title}</h5>
-                <p className="card-text">{photo.description}</p>
-                <a href="#" class="btn btn-primary">Delete</a>
-            </div>
-        </div>
- * 
- * 
- */
