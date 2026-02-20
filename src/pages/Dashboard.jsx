@@ -4,7 +4,7 @@ import DashboardPhoto from '../components/DashboardPhoto';
 import '../components/HomeMap.css';
 import { useState, useEffect } from "react";
 
-function Dashboard() {
+function Dashboard({ user }) {
 
     const [photos, setPhotos] = useState([]);
 
@@ -60,6 +60,12 @@ function Dashboard() {
         }
     };
 
+    const sortedPhotos = [...photos].sort((a, b) => {
+        if (a.userID === user?.id) return -1;
+        if (b.userID === user?.id) return 1;
+        return 0;
+    });
+
     return (
         <div className='home-component '>
             <div className="container-fluid ">
@@ -72,8 +78,8 @@ function Dashboard() {
                                 </div>
                                 <div className="col-12 col-lg-5 ">
                                     <div className="upload-form-container d-flex flex-column p-5 ">
-                                        <input className='form-control from-control-lg my-1' type="text" placeholder="Título" value={title} onChange={(e) => setTitle(e.target.value)} />
-                                        <input className='form-control from-control-lg my-1' type="text" placeholder="Descripción" value={description} onChange={(e) => setDescription(e.target.value)} />
+                                        <input className='form-control from-control-lg my-1' type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                                        <input className='form-control from-control-lg my-1' type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
 
                                         <button className="w-50 btn btn-secondary my-1" type="submit">Upload</button>
                                     </div>
@@ -89,8 +95,13 @@ function Dashboard() {
                 </div>
                 <div className="row d-flex justify-content-center">
                     {
-                        photos.map((photo) => (
-                            <DashboardPhoto key={photo.id} photo={photo} onDelete={handleRemovePhoto} />
+                        sortedPhotos.map((photo) => (
+                            <DashboardPhoto
+                                key={photo.id}
+                                photo={photo}
+                                onDelete={handleRemovePhoto}
+                                currentUser={user}
+                            />
                         ))
                     }
                 </div>

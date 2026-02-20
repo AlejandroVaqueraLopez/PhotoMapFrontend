@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomeMap from '../components/HomeMap';
 import '../components/HomeMap.css';
 
-function DashboardPhoto({ photo, onDelete }) {
+function DashboardPhoto({ photo, onDelete, currentUser }) {
 
   const BASE_URL = 'http://localhost:5555';
 
@@ -16,12 +16,13 @@ function DashboardPhoto({ photo, onDelete }) {
           height: "250px",
           width: "100%"
         }}></div>
-      <figcaption className="figure-caption">{photo.title}</figcaption>
-      <p className="figure-caption">{photo.description}</p>
-      <p className="text small">
+      <figcaption className="figure-caption fs-5 fw-bold">{photo.title}</figcaption>
+      <p className="text fs-6">{photo.description}</p>
+      <p className="figure-caption fs-6">
         Uploaded by: {photo.userName}
       </p>
-      <button onClick={() => onDelete(photo.id)} className="btn btn-dark mt-2">Delete</button>
+      {currentUser && currentUser.id === photo.userID && (
+        <button onClick={() => onDelete(photo.id)} className="btn btn-dark mt-2">Delete</button>)}
     </figure>
   );
 }
